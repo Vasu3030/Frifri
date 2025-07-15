@@ -24,7 +24,7 @@ const CarouselComponent = () => {
                                 <div className='text-3xl font-bold text-amber-300'>
                                     STEP 1
                                 </div>
-                                <div className='flex'>
+                                <div className='text-center break-words max-w-full text-sm sm:text-base px-2'>
                                     Dites au chef les ingrédients et envies que vous avez via des mots clés
                                 </div>
                             </div>
@@ -38,7 +38,7 @@ const CarouselComponent = () => {
                                 <div className='text-3xl font-bold text-amber-300'>
                                     STEP 2
                                 </div>
-                                <div className='flex'>
+                                <div className='text-center break-words max-w-full text-sm sm:text-base px-2'>
                                     Patientez un instant le temps que le chef vous propose les meilleurs plats selon vos goûts et ressources...
                                 </div>
                             </div>
@@ -52,7 +52,7 @@ const CarouselComponent = () => {
                                 <div className='text-3xl font-bold text-amber-300'>
                                     STEP 3
                                 </div>
-                                <div className='flex'>
+                                <div className='text-center break-words max-w-full text-sm sm:text-base px-2'>
                                     Jetez un oeil aux plats proposé ainsi que leur recette et faites votre choix !
                                 </div>
                             </div>
