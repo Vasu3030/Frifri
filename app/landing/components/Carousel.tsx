@@ -20,7 +20,7 @@ const CarouselComponent = () => {
                 <CarouselItem className='h-full'>
                     <Card className='bg-[#8B4513] text-amber-100'>
                         <CardContent className="flex aspect-video items-center justify-center p-6">
-                            <div className='flex flex-col justify-evenly items-center h-full font-bold text-center'>
+                            <div className='flex flex-col justify-center items-center h-full font-bold text-center'>
                                 <div className='text-3xl font-bold text-amber-300'>
                                     STEP 1
                                 </div>
@@ -34,7 +34,7 @@ const CarouselComponent = () => {
                 <CarouselItem >
                     <Card className='bg-[#8B4513] text-amber-100'>
                         <CardContent className="flex aspect-video items-center justify-center p-6">
-                            <div className='flex flex-col justify-evenly items-center h-full font-bold text-center'>
+                            <div className='flex flex-col justify-center items-center h-full font-bold text-center'>
                                 <div className='text-3xl font-bold text-amber-300'>
                                     STEP 2
                                 </div>
@@ -48,7 +48,7 @@ const CarouselComponent = () => {
                 <CarouselItem >
                     <Card className='bg-[#8B4513] text-amber-100'>
                         <CardContent className="flex aspect-video items-center justify-center p-6">
-                            <div className='flex flex-col justify-evenly items-center h-full font-bold text-center'>
+                            <div className='flex flex-col justify-center items-center h-full font-bold text-center'>
                                 <div className='text-3xl font-bold text-amber-300'>
                                     STEP 3
                                 </div>

@@ -41,9 +41,6 @@ export function Menu() {
             </SheetClose>
           </div>
         </div>
-        <SheetFooter>
-          <Button className="cursor-pointer hover:ring-1 ring-white">Report a bug</Button>
-        </SheetFooter>
       </SheetContent>
     </Sheet>
   )

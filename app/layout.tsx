@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Menu from "@/components/Menu";
+import { FeedbackButton } from "@/components/FeedBackButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,10 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
 
           <footer className="text-center text-xs text-gray-500 border-t p-10">
-            © Let Me Cook by Vassou Aroun - 2025
+            <div className="flex flex-row justify-evenly items-center">
+              <div>© Let Me Cook by Vassou Aroun - 2025</div>
+              <div className="flex"><FeedbackButton /></div>
+            </div>
           </footer>
         </div>
       </body>
