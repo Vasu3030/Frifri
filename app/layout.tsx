@@ -26,18 +26,16 @@ export default function RootLayout({
   return (
     <html lang="fr" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full overflow-auto`}
       >
         <div className="flex flex-col h-full">
-          {/* Header */}
           <header className="p-4">
             <Menu />
           </header>
-          {/* Contenu principal */}
-          <main className="flex-grow overflow-hidden">{children}</main>
+          
+          <main className="flex-grow">{children}</main>
 
-          {/* Footer fixe */}
-          <footer className="text-center text-xs text-gray-500 border-t">
+          <footer className="text-center text-xs text-gray-500 border-t p-10">
             © Let Me Cook by Vassou Aroun - 2025
           </footer>
         </div>

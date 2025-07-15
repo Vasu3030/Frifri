@@ -2,7 +2,7 @@ import Landing from "./landing/page";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen overflow-x-hidden">
+    <main className="flex flex-col min-h-full overflow-x-hidden">
       <Landing />
     </main>
   );
