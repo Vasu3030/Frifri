@@ -11,7 +11,7 @@ import Autoplay from "embla-carousel-autoplay"
 
 const CarouselComponent = () => {
     const plugin = React.useRef(
-        Autoplay({ delay: 2500, stopOnInteraction: true })
+        Autoplay({ delay: 4000, stopOnInteraction: true })
     )
 
     return (
@@ -19,7 +19,7 @@ const CarouselComponent = () => {
             <CarouselContent>
                 <CarouselItem className='h-full'>
                     <Card className='bg-[#8B4513] text-amber-100'>
-                        <CardContent className="flex aspect-[2/1] items-center justify-center p-6">
+                        <CardContent className="flex min-h-[14rem] items-center justify-center p-6">
                             <div className='flex flex-col justify-evenly items-center h-full font-bold text-center'>
                                 <div className='text-3xl font-bold text-amber-300'>
                                     STEP 1
@@ -33,7 +33,7 @@ const CarouselComponent = () => {
                 </CarouselItem>
                 <CarouselItem >
                     <Card className='bg-[#8B4513] text-amber-100'>
-                        <CardContent className="flex aspect-[2/1] items-center justify-center p-6">
+                        <CardContent className="flex min-h-[14rem] items-center justify-center p-6">
                             <div className='flex flex-col justify-evenly items-center h-full font-bold text-center'>
                                 <div className='text-3xl font-bold text-amber-300'>
                                     STEP 2
@@ -47,7 +47,7 @@ const CarouselComponent = () => {
                 </CarouselItem>
                 <CarouselItem >
                     <Card className='bg-[#8B4513] text-amber-100'>
-                        <CardContent className="flex aspect-[2/1] items-center justify-center p-6">
+                        <CardContent className="flex min-h-[14rem] items-center justify-center p-6">
                             <div className='flex flex-col justify-evenly items-center h-full font-bold text-center'>
                                 <div className='text-3xl font-bold text-amber-300'>
                                     STEP 3
