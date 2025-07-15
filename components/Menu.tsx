@@ -35,12 +35,12 @@ export function Menu() {
           </div>
           <div className="grid gap-3">
             <SheetClose asChild>
-              <Link className="hover:text-amber-200" href={"/"}>Historique</Link>
+              <Link className="hover:text-amber-200" href={"/history"}>Historique</Link>
             </SheetClose>
           </div>
           <div className="grid gap-3">
             <SheetClose asChild>
-              <Link className="hover:text-amber-200" href={"/"}>Favoris</Link>
+              <Link className="hover:text-amber-200" href={"/favorite"}>Favoris</Link>
             </SheetClose>
           </div>
         </div>
