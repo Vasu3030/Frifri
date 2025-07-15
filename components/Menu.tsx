@@ -11,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import Link from "next/link"
 
 export function Menu() {
   return (
@@ -18,28 +19,33 @@ export function Menu() {
       <SheetTrigger asChild>
         <Button className="bg-amber-200 font-extrabold text-[#8B4513] cursor-pointer" variant="outline">☰</Button>
       </SheetTrigger>
-      <SheetContent side="left">
+      <SheetContent side="left" className="bg-black text-white rounded-r-xl">
         <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
+          <Link href={"/"}>
+            <SheetClose asChild>
+              <SheetTitle className="hover:text-white">Let me cook</SheetTitle>
+            </SheetClose>
+          </Link>
         </SheetHeader>
         <div className="grid flex-1 auto-rows-min gap-6 px-4">
           <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-name">Name</Label>
-            <Input id="sheet-demo-name" defaultValue="Pedro Duarte" />
+            <SheetClose asChild>
+              <Link className="hover:text-amber-200" href={"/recipe"}>Trouver un plat</Link>
+            </SheetClose>
           </div>
           <div className="grid gap-3">
-            <Label htmlFor="sheet-demo-username">Username</Label>
-            <Input id="sheet-demo-username" defaultValue="@peduarte" />
+            <SheetClose asChild>
+              <Link className="hover:text-amber-200" href={"/"}>Historique</Link>
+            </SheetClose>
+          </div>
+          <div className="grid gap-3">
+            <SheetClose asChild>
+              <Link className="hover:text-amber-200" href={"/"}>Favoris</Link>
+            </SheetClose>
           </div>
         </div>
         <SheetFooter>
-          <Button type="submit">Save changes</Button>
-          <SheetClose asChild>
-            <Button variant="outline">Close</Button>
-          </SheetClose>
+          <Button className="cursor-pointer hover:ring-1 ring-white">Report a bug</Button>
         </SheetFooter>
       </SheetContent>
     </Sheet>

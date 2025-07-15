@@ -51,6 +51,10 @@ Détaille le plus possible les étapes de la recette
 
         const parsed = JSON.parse(response.content as string);
 
+        if (parsed.status === 400) {
+          return { status: 400, message: "Votre prompt n'a pas de rapport avec la cuisine." };
+        }
+
         const recipesWithImages = await Promise.all(
             parsed.recipes.map(async (recipe: any) => {
                 const image = await getUnsplashImage(recipe.name);

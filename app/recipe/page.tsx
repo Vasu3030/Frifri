@@ -12,6 +12,7 @@ interface Recipe {
   steps: string[];
   image?: string;
 }
+
 import TagGroup from './components/TagGroup'
 import RecipeCard from './components/RecipeCard'
 
@@ -21,9 +22,11 @@ const Recipe = () => {
   const [recipes, setRecipes] = useState<Recipe[] | null>();
   const [ignored, setIgnored] = useState<string[]>();
   const [tags, setTags] = useState<string[]>();
+  const [error, setError] = useState<string | null>();
 
   const handlePromptSubmit = async (value: string) => {
     setIsLoading(true);
+    setError(null);
     setPrompt(value);
     const res = await getRecipes(value);
     setRecipes(res.recipes);
@@ -36,6 +39,8 @@ const Recipe = () => {
       setRecipes(response.recipes)
       setIgnored(response.ignored);
       setTags(response.tags);
+    } else {
+      setError(response.message)
     }
     return response
   }
@@ -58,6 +63,11 @@ const Recipe = () => {
             <PandaLoader />
           </div>
           : null}
+        {!isLoading && error && (
+          <p className="text-center text-red-600 font-semibold mt-4">
+            {error}
+          </p>
+        )}
         {!isLoading && recipes && recipes.map((recipe, index) => (
           <div key={index} className="m-4">
             <RecipeCard recipe={recipe} />
