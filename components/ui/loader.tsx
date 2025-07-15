@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react";
+import { motion, easeInOut} from "framer-motion";
 import React from "react";
 
 export const LoaderOne = () => {
@@ -9,7 +9,7 @@ export const LoaderOne = () => {
       repeat: Infinity,
       repeatType: "loop" as const,
       delay: x * 0.2,
-      ease: "easeInOut",
+      ease:  easeInOut,
     };
   };
   return (
@@ -55,7 +55,7 @@ export const LoaderTwo = () => {
       repeat: Infinity,
       repeatType: "loop" as const,
       delay: x * 0.2,
-      ease: "easeInOut",
+      ease:  easeInOut,
     };
   };
   return (
@@ -114,7 +114,7 @@ export const LoaderThree = () => {
         animate={{ pathLength: 1, fill: "var(--fill-final)" }}
         transition={{
           duration: 2,
-          ease: "easeInOut",
+          ease:  easeInOut,
           repeat: Infinity,
           repeatType: "reverse",
         }}
@@ -129,7 +129,7 @@ export const LoaderFour = ({ text = "Loading..." }: { text?: string }) => {
     <div className="relative font-bold text-black [perspective:1000px] dark:text-white">
       <motion.span
         animate={{
-          skew: [0, -40, 0],
+          skewX: [0, -40, 0],
           scaleX: [1, 2, 1],
         }}
         transition={{
@@ -203,7 +203,7 @@ export const PandaLoader = () => {
           duration: 2,
           repeat: Infinity,
           repeatType: "reverse",
-          ease: "easeInOut",
+          ease:  easeInOut,
         }}
       />
 
@@ -219,7 +219,7 @@ export const PandaLoader = () => {
           duration: 2,
           repeat: Infinity,
           delay: 0.2,
-          ease: "easeInOut",
+          ease:  easeInOut,
         }}
       />
       <motion.circle
@@ -233,7 +233,7 @@ export const PandaLoader = () => {
           duration: 2,
           repeat: Infinity,
           delay: 0.3,
-          ease: "easeInOut",
+          ease:  easeInOut,
         }}
       />
 
@@ -250,7 +250,7 @@ export const PandaLoader = () => {
           duration: 2,
           repeat: Infinity,
           delay: 0.4,
-          ease: "easeInOut",
+          ease:  easeInOut,
         }}
       />
       <motion.ellipse
@@ -265,7 +265,7 @@ export const PandaLoader = () => {
           duration: 2,
           repeat: Infinity,
           delay: 0.5,
-          ease: "easeInOut",
+          ease:  easeInOut,
         }}
       />
 
@@ -281,7 +281,7 @@ export const PandaLoader = () => {
           duration: 2,
           repeat: Infinity,
           delay: 0.6,
-          ease: "easeInOut",
+          ease:  easeInOut,
         }}
       />
       <motion.circle
@@ -295,7 +295,7 @@ export const PandaLoader = () => {
           duration: 2,
           repeat: Infinity,
           delay: 0.7,
-          ease: "easeInOut",
+          ease:  easeInOut,
         }}
       />
 
@@ -312,7 +312,7 @@ export const PandaLoader = () => {
           repeat: Infinity,
           repeatType: "reverse",
           delay: 0.8,
-          ease: "easeInOut",
+          ease:  easeInOut,
         }}
       />
 
@@ -329,7 +329,7 @@ export const PandaLoader = () => {
           repeat: Infinity,
           repeatType: "reverse",
           delay: 1,
-          ease: "easeInOut",
+          ease:  easeInOut,
         }}
       />
     </motion.svg>

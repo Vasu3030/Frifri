@@ -25,7 +25,7 @@ const CarouselComponent = () => {
                                     STEP 1
                                 </div>
                                 <div className='flex'>
-                                    Dites au chef les ingrédients et envies que vous avez à l'aide de mots clés
+                                    Dites au chef les ingrédients et envies que vous avez via des mots clés
                                 </div>
                             </div>
                         </CardContent>

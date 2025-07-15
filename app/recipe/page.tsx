@@ -17,7 +17,6 @@ import TagGroup from './components/TagGroup'
 import RecipeCard from './components/RecipeCard'
 
 const Recipe = () => {
-  const [prompt, setPrompt] = useState("")
   const [isLoading, setIsLoading] = useState(false);
   const [recipes, setRecipes] = useState<Recipe[] | null>();
   const [ignored, setIgnored] = useState<string[]>();
@@ -27,7 +26,6 @@ const Recipe = () => {
   const handlePromptSubmit = async (value: string) => {
     setIsLoading(true);
     setError(null);
-    setPrompt(value);
     const res = await getRecipes(value);
     setRecipes(res.recipes);
     setIsLoading(false);

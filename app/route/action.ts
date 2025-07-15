@@ -7,6 +7,14 @@ const chatModel = new ChatOpenAI({
     apiKey: process.env.OPEN_AI_KEY
 })
 
+interface Recipe {
+  name: string;
+  description: string;
+  ingredients: string[];
+  steps: string[];
+  image?: string;
+}
+
 export async function generateRecipes(prompt: string) {
     const request = `Tu es un chef. Réponds uniquement avec un objet JSON strict (conforme RFC 8259).
 
@@ -56,7 +64,7 @@ Détaille le plus possible les étapes de la recette
         }
 
         const recipesWithImages = await Promise.all(
-            parsed.recipes.map(async (recipe: any) => {
+            parsed.recipes.map(async (recipe: Recipe) => {
                 const image = await getUnsplashImage(recipe.name);
                 return { ...recipe, image };
             })

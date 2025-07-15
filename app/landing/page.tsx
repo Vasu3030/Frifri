@@ -3,23 +3,10 @@
 import React from 'react'
 import Link from "next/link";
 import Image from 'next/image'
-import { Card, CardContent } from "@/components/ui/card"
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button"
-import Autoplay from "embla-carousel-autoplay"
 import CarouselComponent from './components/Carousel';
 
 const Landing = () => {
-
-    const plugin = React.useRef(
-        Autoplay({ delay: 2000, stopOnInteraction: true })
-    )
 
     return (
         <div className='flex flex-col gap-4 justify-center items-center'>
