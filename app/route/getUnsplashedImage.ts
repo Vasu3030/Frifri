@@ -1,8 +1,15 @@
-// app/route/getUnsplashImage.ts
+type UnsplashImage = {
+  alt_description: string | null;
+  description: string | null;
+  urls: {
+    regular: string;
+  };
+};
+
 export async function getUnsplashImage(query: string) {
-  const res = await fetch(
-    `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=1&client_id=${process.env.UNSPLASH_ACCESS_KEY}`
-  );
+  const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=5&content_filter=high&orientation=landscape&lang=fr&order_by=relevant&client_id=${process.env.UNSPLASH_ACCESS_KEY}`;
+
+  const res = await fetch(url);
 
   if (!res.ok) {
     console.error("Erreur Unsplash");
@@ -10,5 +17,21 @@ export async function getUnsplashImage(query: string) {
   }
 
   const data = await res.json();
-  return data.results[0]?.urls?.regular || null;
+
+  const results = data.results as UnsplashImage[];
+
+  const filtered = results.find((img) => {
+    const desc = `${img.alt_description || ''} ${img.description || ''}`.toLowerCase();
+    return (
+      desc.includes("dish") ||
+      desc.includes("meal") ||
+      desc.includes("food") ||
+      desc.includes("plat") ||
+      desc.includes("recette") ||
+      desc.includes("cooked") ||
+      desc.includes("cuisine")
+    );
+  });
+
+  return filtered?.urls?.regular || results[0]?.urls?.regular || "/images/default-dish.jpg";
 }

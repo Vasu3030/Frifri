@@ -19,13 +19,15 @@ import RecipeCard from './components/RecipeCard'
 const Recipe = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [recipes, setRecipes] = useState<Recipe[] | null>();
-  const [ignored, setIgnored] = useState<string[]>();
-  const [tags, setTags] = useState<string[]>();
+  const [ignored, setIgnored] = useState<string[] | null>();
+  const [tags, setTags] = useState<string[] | null>();
   const [error, setError] = useState<string | null>();
 
   const handlePromptSubmit = async (value: string) => {
     setIsLoading(true);
     setError(null);
+    setTags(null)
+    setIgnored(null)
     const res = await getRecipes(value);
     setRecipes(res.recipes);
     setIsLoading(false);
