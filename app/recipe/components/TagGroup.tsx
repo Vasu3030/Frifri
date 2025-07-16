@@ -1,13 +1,8 @@
 // components/TagGroup.tsx
 import React from "react";
+import { ITagGroupProps } from "@/lib/types/tag";
 
-interface TagGroupProps {
-  title: string;
-  items: string[];
-  colorClass?: string; // ex: bg-green-600
-}
-
-const TagGroup: React.FC<TagGroupProps> = ({ title, items, colorClass = "bg-gray-500" }) => {
+const TagGroup: React.FC<ITagGroupProps> = ({ title, items, colorClass = "bg-gray-500" }) => {
   if (!items || items.length === 0) return null;
 
   return (

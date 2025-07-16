@@ -4,21 +4,14 @@ import React, { useState } from 'react'
 import Prompt from './components/Prompt'
 import { generateRecipes } from '../route/action'
 import { PandaLoader } from "@/components/ui/loader";
-
-interface Recipe {
-  name: string;
-  description: string;
-  ingredients: string[];
-  steps: string[];
-  image?: string;
-}
+import { IRecipe } from '@/lib/types/recipe';
 
 import TagGroup from './components/TagGroup'
 import RecipeCard from './components/RecipeCard'
 
 const Recipe = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [recipes, setRecipes] = useState<Recipe[] | null>();
+  const [recipes, setRecipes] = useState<IRecipe[] | null>();
   const [ignored, setIgnored] = useState<string[] | null>();
   const [tags, setTags] = useState<string[] | null>();
   const [error, setError] = useState<string | null>();

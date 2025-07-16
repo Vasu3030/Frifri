@@ -11,17 +11,10 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-
-interface Recipe {
-    name: string;
-    description: string;
-    ingredients: string[];
-    steps: string[];
-    image?: string;
-}
+import { IRecipe } from "@/lib/types/recipe";
 
 interface Props {
-    recipe: Recipe;
+    recipe: IRecipe;
 }
 
 const RecipeCard: React.FC<Props> = ({ recipe }) => {

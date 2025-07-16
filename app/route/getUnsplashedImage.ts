@@ -33,5 +33,5 @@ export async function getUnsplashImage(query: string) {
     );
   });
 
-  return filtered?.urls?.regular || results[0]?.urls?.regular || "/images/default-dish.jpg";
+  return filtered?.urls?.regular || results[0]?.urls?.regular || "panda.svg";
 }
