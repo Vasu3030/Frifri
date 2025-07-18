@@ -1,5 +1,5 @@
 import React from 'react'
-import ComingSoon from '../recipe/components/ComingSoon'
+import ComingSoon from '../../components/ComingSoon'
 
 const History = () => {
   return (

@@ -48,7 +48,7 @@ Le prompt utilisateur peut être :
 }
 
 - Les ingrédients doivent être précédés de leur quantité recommandée et cela pour 2 personnes impérativement sauf si le prompt de l'user décris le nombre de personnes.
-- Les étapes de préparation ("steps")** doivent être :
+- Les étapes de préparation ("steps") doivent être :
   - Détaillées et précises.
   - Actionnables même pour un débutant.
   - Inclure les quantités approximatives d’eau ou d’huile, les températures, les durées, les ustensiles (ex : casserole, poêle, four), les techniques (faire revenir, porter à ébullition, laisser mijoter, etc.).
