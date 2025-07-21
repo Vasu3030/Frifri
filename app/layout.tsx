@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Menu from "@/components/Menu";
 import { FeedbackButton } from "@/components/FeedBackButton";
+import { getSupabaseUser } from "@/lib/supabase/getUser";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,11 +20,13 @@ export const metadata: Metadata = {
   description: "Application de recommandation de recette de cuisine",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const user = await getSupabaseUser();
+
   return (
     <html lang="fr" className="h-full">
       <body
@@ -31,15 +34,19 @@ export default function RootLayout({
       >
         <div className="flex flex-col h-full">
           <header className="p-4">
-            <Menu />
+            {user && (
+              <Menu />
+            )}
           </header>
-          
+
           <main className="flex-grow">{children}</main>
 
           <footer className="text-center text-xs text-gray-500 border-t p-10">
             <div className="flex flex-row justify-evenly items-center">
               <div>© Let Me Cook by Vassou Aroun - 2025</div>
-              <div className="flex"><FeedbackButton /></div>
+              <div className="flex">
+                <FeedbackButton />
+              </div>
             </div>
           </footer>
         </div>
